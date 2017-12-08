@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DDY-lo-XF5">
+    <device id="retina3_5" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Menu View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MenuViewController" customModule="Randomizly2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Угадайка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ul-BS-FxX">
+                                <rect key="frame" x="136.5" y="130" width="207.5" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0F-Wd-ASe">
+                                <rect key="frame" x="160" y="198" width="160" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Начать"/>
+                                <connections>
+                                    <segue destination="j8B-ee-rd1" kind="show" id="0QN-Dg-bGt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Denis Bystruev © 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXy-Kz-T3u">
+                                <rect key="frame" x="152.5" y="291" width="175" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GuessMyNumber" translatesAutoresizingMaskIntoConstraints="NO" id="bVM-n1-mna">
+                                <rect key="frame" x="16" y="-86" width="448" height="200"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="n0F-Wd-ASe" firstAttribute="top" secondItem="8Ul-BS-FxX" secondAttribute="bottom" constant="8" id="1Lu-Vx-My8"/>
+                            <constraint firstItem="8Ul-BS-FxX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="A6z-eR-HC2"/>
+                            <constraint firstItem="n0F-Wd-ASe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AdV-Bh-3kd"/>
+                            <constraint firstItem="8Ul-BS-FxX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PM7-DO-QCN"/>
+                            <constraint firstItem="8Ul-BS-FxX" firstAttribute="top" secondItem="bVM-n1-mna" secondAttribute="bottom" constant="16" id="bDd-Ok-wvW"/>
+                            <constraint firstItem="bVM-n1-mna" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cc4-C1-7zQ"/>
+                            <constraint firstItem="rXy-Kz-T3u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hV7-8i-yjG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rXy-Kz-T3u" secondAttribute="bottom" constant="8" id="mYb-QL-VOS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bVM-n1-mna" secondAttribute="trailing" constant="16" id="x5A-qC-z91"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="K7u-Ly-Y0R"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488.75" y="135"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="7Oy-OC-QGy">
+            <objects>
+                <viewController id="j8B-ee-rd1" customClass="GameViewController" customModule="Randomizly2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4I4-RI-Yya">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n7i-qU-Aka">
+                                <rect key="frame" x="188" y="91" width="104" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="gf8-oN-y7V"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gb7-vg-FCb">
+                                <rect key="frame" x="207" y="129" width="66" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Угадать"/>
+                                <connections>
+                                    <action selector="guess:" destination="j8B-ee-rd1" eventType="touchUpInside" id="YfQ-C5-dT0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18e-BE-zR9">
+                                <rect key="frame" x="16" y="61.5" width="448" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Угадай число от ... до ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guq-U5-F3g">
+                                <rect key="frame" x="16" y="40" width="448" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="n7i-qU-Aka" firstAttribute="top" secondItem="18e-BE-zR9" secondAttribute="bottom" constant="8" id="12m-QD-VSo"/>
+                            <constraint firstItem="R0G-QK-RCG" firstAttribute="trailing" secondItem="guq-U5-F3g" secondAttribute="trailing" constant="16" id="E7H-SL-LFL"/>
+                            <constraint firstItem="gb7-vg-FCb" firstAttribute="centerX" secondItem="4I4-RI-Yya" secondAttribute="centerX" id="HBt-g8-X4S"/>
+                            <constraint firstItem="gb7-vg-FCb" firstAttribute="centerY" secondItem="4I4-RI-Yya" secondAttribute="centerY" constant="-14" id="V1r-a0-ezd"/>
+                            <constraint firstItem="R0G-QK-RCG" firstAttribute="trailing" secondItem="18e-BE-zR9" secondAttribute="trailing" constant="16" id="dj1-ob-ssx"/>
+                            <constraint firstItem="gb7-vg-FCb" firstAttribute="top" secondItem="n7i-qU-Aka" secondAttribute="bottom" constant="8" id="gUQ-1D-ebw"/>
+                            <constraint firstItem="18e-BE-zR9" firstAttribute="leading" secondItem="R0G-QK-RCG" secondAttribute="leading" constant="16" id="gm9-qy-OjI"/>
+                            <constraint firstItem="guq-U5-F3g" firstAttribute="leading" secondItem="R0G-QK-RCG" secondAttribute="leading" constant="16" id="nVp-Z4-mrB"/>
+                            <constraint firstItem="guq-U5-F3g" firstAttribute="top" secondItem="R0G-QK-RCG" secondAttribute="top" constant="8" id="xOI-Em-wfP"/>
+                            <constraint firstItem="n7i-qU-Aka" firstAttribute="centerX" secondItem="4I4-RI-Yya" secondAttribute="centerX" id="y4K-1G-2F3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="R0G-QK-RCG"/>
+                    </view>
+                    <connections>
+                        <outlet property="hintLabel" destination="18e-BE-zR9" id="Pmt-g8-3BA"/>
+                        <outlet property="inputField" destination="n7i-qU-Aka" id="7ri-F2-pqC"/>
+                        <outlet property="titleLabel" destination="guq-U5-F3g" id="mj8-J9-JE0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zhb-Ng-3Xj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1365" y="135"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="raV-uC-Lp8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DDY-lo-XF5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uCY-AG-vaD">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fvn-CH-r3n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D2W-0K-kzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-456" y="135"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="GuessMyNumber" width="200" height="200"/>
+    </resources>
+</document>
