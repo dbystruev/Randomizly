@@ -15,8 +15,8 @@ enum guessResult {
 }
 
 class Model {
-    private(set) var minNumber = 1000
-    private(set) var maxNumber = 2000
+    private(set) var minNumber = 0
+    private(set) var maxNumber = 0
     
     private var number = 0
     private(set) var tries = 0
@@ -39,9 +39,11 @@ class Model {
     }
     
     func randomize() {
-        minNumber = Int(arc4random_uniform(100) + 1)
-        maxNumber = Int(arc4random_uniform(900) + 1) + 100
-        number = Int(arc4random_uniform(UInt32(maxNumber - minNumber + 1))) + minNumber
+        let minNumber = Int(arc4random_uniform(6))
+        let maxNumber = Int(arc4random_uniform(10 - UInt32(minNumber)) + 1) + minNumber
+        self.minNumber = 100 * minNumber
+        self.maxNumber = 100 * maxNumber
+        number = Int(arc4random_uniform(UInt32(self.maxNumber - self.minNumber + 1))) + self.minNumber
         tries = 0
     }
 }
