@@ -15,18 +15,34 @@ class GameViewController: UIViewController {
     @IBOutlet weak var hintLabel: UILabel!
     @IBOutlet weak var inputField: UITextField!
     
+    var colors = [UIColor]()
+    var colorIndex = 0
     let model = Model()
     var timer: Timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateFields()
+        initColors()
+        updateTitle()
+        updateInputField()
         hintLabel.isHidden = true
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {_ in
-            let colors: [UIColor] = [.white, .cyan, .yellow]
-            let index = Int(Date().timeIntervalSince1970) % colors.count
-            self.view.backgroundColor = colors[index]
+            self.colorIndex += 1
+            self.colorIndex = self.colors.count <= self.colorIndex ? 0 : self.colorIndex
+            self.view.backgroundColor = self.colors[self.colorIndex]
         })
+    }
+    
+    func initColors() {
+        if colors.count == 0 {
+            for i in (50...100).reversed() {
+                let color = UIColor(white: 0.01 * CGFloat(i), alpha: 1)
+                colors.append(color)
+            }
+        }
+        
+        colorIndex = 0
+        view.backgroundColor = colors[colorIndex]
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -34,12 +50,16 @@ class GameViewController: UIViewController {
         super.viewWillDisappear(animated)
     }
     
-    func updateFields() {
-        titleLabel.text = "Угадай число от \(model.minNumber) до \(model.maxNumber)"
+    func updateInputField() {
         inputField.text = String((model.maxNumber - model.minNumber) / 2 + model.minNumber)
     }
     
+    func updateTitle() {
+        titleLabel.text = "Угадай число от \(model.minNumber) до \(model.maxNumber)"
+    }
+    
     @IBAction func guess(_ sender: Any) {
+        initColors()
         if
             let input = inputField.text,
             let number = Int(input),
@@ -48,9 +68,9 @@ class GameViewController: UIViewController {
             let result = model.guess(number)
             switch result {
             case .tooLow:
-                hintLabel.text = "⬆️ больше \(number)"
+                hintLabel.text = "⬆️ больше \(number), но меньше \(model.maxNumber + 1)"
                 hintLabel.isHidden = false
-                updateFields()
+                updateInputField()
             case .correct:
                 hintLabel.isHidden = true
                 var message = "Вы угадали за \(model.tries)"
@@ -69,16 +89,17 @@ class GameViewController: UIViewController {
                 }
                 showAlert(title: "Поздравляем, это \(number)!", message: message)
                 model.randomize()
-                updateFields()
+                updateTitle()
+                updateInputField()
             case .tooHigh:
-                hintLabel.text = "⬇️ меньше \(number)"
+                hintLabel.text = "⬇️ меньше \(number), но больше \(model.minNumber - 1)"
                 hintLabel.isHidden = false
-                updateFields()
+                updateInputField()
             }
         } else {
             showAlert(title: "Ошибка", message: "Введите целое число от \(model.minNumber) до \(model.maxNumber)")
             hintLabel.isHidden = true
-            updateFields()
+            updateInputField()
         }
     }
     
