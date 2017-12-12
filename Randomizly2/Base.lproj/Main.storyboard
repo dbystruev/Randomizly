@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Угадайка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ul-BS-FxX">
-                                <rect key="frame" x="136.5" y="130" width="207.5" height="60"/>
+                                <rect key="frame" x="136" y="130" width="208" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -38,8 +38,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GuessMyNumber" translatesAutoresizingMaskIntoConstraints="NO" id="bVM-n1-mna">
-                                <rect key="frame" x="16" y="-86" width="448" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GuessMyNumber" translatesAutoresizingMaskIntoConstraints="NO" id="bVM-n1-mna">
+                                <rect key="frame" x="-272" y="40" width="1024" height="82"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -47,12 +47,12 @@
                             <constraint firstItem="n0F-Wd-ASe" firstAttribute="top" secondItem="8Ul-BS-FxX" secondAttribute="bottom" constant="8" id="1Lu-Vx-My8"/>
                             <constraint firstItem="8Ul-BS-FxX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="A6z-eR-HC2"/>
                             <constraint firstItem="n0F-Wd-ASe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AdV-Bh-3kd"/>
+                            <constraint firstItem="bVM-n1-mna" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IGk-cG-BIW"/>
                             <constraint firstItem="8Ul-BS-FxX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PM7-DO-QCN"/>
-                            <constraint firstItem="8Ul-BS-FxX" firstAttribute="top" secondItem="bVM-n1-mna" secondAttribute="bottom" constant="16" id="bDd-Ok-wvW"/>
-                            <constraint firstItem="bVM-n1-mna" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cc4-C1-7zQ"/>
+                            <constraint firstItem="bVM-n1-mna" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="UjI-GU-y5X"/>
                             <constraint firstItem="rXy-Kz-T3u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hV7-8i-yjG"/>
+                            <constraint firstItem="8Ul-BS-FxX" firstAttribute="top" secondItem="bVM-n1-mna" secondAttribute="bottom" constant="8" id="hej-X0-Fku"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rXy-Kz-T3u" secondAttribute="bottom" constant="8" id="mYb-QL-VOS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bVM-n1-mna" secondAttribute="trailing" constant="16" id="x5A-qC-z91"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -153,6 +153,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="GuessMyNumber" width="200" height="200"/>
+        <image name="GuessMyNumber" width="1024" height="1024"/>
     </resources>
 </document>
