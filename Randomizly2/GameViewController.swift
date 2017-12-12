@@ -24,7 +24,6 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         initColors()
         updateTitle()
-        updateInputField()
         hintLabel.isHidden = true
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {_ in
             self.colorIndex += 1
@@ -58,6 +57,10 @@ class GameViewController: UIViewController {
         titleLabel.text = "Угадай число от \(model.minNumber) до \(model.maxNumber)"
     }
     
+    @IBAction func hint(_ sender: Any) {
+        updateInputField()
+    }
+    
     @IBAction func guess(_ sender: Any) {
         initColors()
         if
@@ -70,7 +73,6 @@ class GameViewController: UIViewController {
             case .tooLow:
                 hintLabel.text = "⬆️ больше \(number), но меньше \(model.maxNumber + 1)"
                 hintLabel.isHidden = false
-                updateInputField()
             case .correct:
                 hintLabel.isHidden = true
                 var message = "Вы угадали за \(model.tries)"
@@ -90,16 +92,13 @@ class GameViewController: UIViewController {
                 showAlert(title: "Поздравляем, это \(number)!", message: message)
                 model.randomize()
                 updateTitle()
-                updateInputField()
             case .tooHigh:
                 hintLabel.text = "⬇️ меньше \(number), но больше \(model.minNumber - 1)"
                 hintLabel.isHidden = false
-                updateInputField()
             }
         } else {
             showAlert(title: "Ошибка", message: "Введите целое число от \(model.minNumber) до \(model.maxNumber)")
             hintLabel.isHidden = true
-            updateInputField()
         }
     }
     
