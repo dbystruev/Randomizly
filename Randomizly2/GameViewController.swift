@@ -71,7 +71,7 @@ class GameViewController: UIViewController {
             let result = model.guess(number)
             switch result {
             case .tooLow:
-                hintLabel.text = "⬆️ больше \(number), но меньше \(model.maxNumber + 1)"
+                hintLabel.text = "\(number) < ⬆️ \u{2A7D} \(model.maxNumber)"
                 hintLabel.isHidden = false
             case .correct:
                 hintLabel.isHidden = true
@@ -93,7 +93,7 @@ class GameViewController: UIViewController {
                 model.randomize()
                 updateTitle()
             case .tooHigh:
-                hintLabel.text = "⬇️ меньше \(number), но больше \(model.minNumber - 1)"
+                hintLabel.text = "\(model.minNumber) \u{2A7D} ⬇️ < \(number)"
                 hintLabel.isHidden = false
             }
         } else {
